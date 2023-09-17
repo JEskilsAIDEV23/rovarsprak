@@ -1,0 +1,20 @@
+from rovarsprak import rovare
+
+fil_r = input('Ange en text fil: ')
+prefix = input('Ange ett eget prefix för krypterad fil: ')
+frc = input('Ange hur noga icke svenska bokstäver granskas 0.00 - 1.00: ')
+
+try:
+    frc = float(frc)
+    prefix != ""
+
+except:
+    prefix = 'rs_'
+    print('prefix default "rs_"')
+    frc = 0.50
+    print('frc default 0.50 används')
+
+    
+rsprak = rovare(fil_r, prefix, frc)
+
+print('\n_________\n'+rsprak)
