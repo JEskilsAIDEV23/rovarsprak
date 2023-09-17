@@ -74,10 +74,11 @@ def rs_transl(text):
 # fil_n = fil ifall fil_r inte existerade
 # prefix = en möjlighet att ge sparfilen ett automatiskt skript för att underlätta identifiering av krypterade
 # filer samt för att undvika att någon fil skrivs över. 
-# Kontroll ifall en sparfil existerar görs även med check_path()
+# Kontroll ifall en sparfil ändå existerar görs även med check_path()
 
 
 def text_sav(fil_r, fil_n, rsprak, prefix = 'rs_'):
+
 
     try:
         fil_n != ""

@@ -79,20 +79,18 @@ def rs_transl(text):
 
 def text_sav(fil_r, fil_n, rsprak, prefix = 'rs_'):
 
-    try:
-        fil_n != ""
+    if fil_n == "": #Kontroll att fil_r existerade
+        fil_s = prefix+fil_r #namnger sparfilen med valt prefix, default = 'rs_'
+        if check_path(fil_s) == True: #Kontrollerar ifall sparfil redan finns
+            fil_s = save_new_file(fil_s) #Ifall sparfil finns ge användare möjlighet att ge nytt namn
 
-    except:
-        fil_r = fil_n 
-
-    fil_s = prefix+fil_r #namnger sparfilen med valt prefix, default = 'rs_'
-
-    if check_path(fil_s) == True: #Kontrollerar ifall sparfil redan finns
-        fil_s = save_new_file(fil_s) #Ifall sparfil finns ge användare möjlighet att ge nytt namn
-
+    else:
+        fil_s = prefix+fil_n #namnger sparfilen med valt prefix, default = 'rs_'
+        if check_path(fil_s) == True: #Kontrollerar ifall sparfil redan finns
+            fil_s = save_new_file(fil_s) #Ifall sparfil finns ge användare möjlighet att ge nytt namn
 
     with open(fil_s, 'w', encoding = 'utf-8') as sav: #sparar den krypterade filen
-
+        
         sav.write(rsprak)
 
     return print(f"Fil sparad som {fil_s}")
