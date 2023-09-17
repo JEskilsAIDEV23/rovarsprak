@@ -82,13 +82,8 @@ def check_encode(fil_s):
         print(f'inläst fil av typen {encode}')
     return encode
 
-
-#def check_param(prefix, frc):
 def check_param(frc):
 
- #   if prefix == "":
- #       prefix = 'enc_rs_'
-    
     try:
         frc = float(frc)
         if frc > 1.0:
@@ -102,19 +97,12 @@ def check_param(frc):
         frc = 0.50
 
     print(f'\nfrc = {frc}')
- #   print(f'prefix = "{prefix}"')
 
- #   return prefix, frc
     return frc
 
-
-#def check_save_file(fil_r, prefix):
 def check_save_file(fil_s):
 
- #   fil_s = prefix+fil_r
-
     if check_path(fil_s) == False:
- #       fil_s = prefix+fil_r
         return fil_s
 
     if check_path(fil_s) == True:
@@ -123,13 +111,14 @@ def check_save_file(fil_s):
 
         if fil_ns == "":
             fil_s = fil_s
-            return fil_s
 
         if fil_ns != "":
             fil_s = fil_ns   
-            if check_path(fil_s) == True:
-                fil_s = 'Exception_'+fil_s
-                print('Exception prefix tillagt för att skydda en befintlig fil')
-                return fil_s
+            
+        if check_path(fil_s) == True:
+            fil_s = 'Exception_'+fil_s
+            print('Exception prefix tillagt för att skydda en annan befintlig fil')
+            
+        return fil_s
     
     return fil_s

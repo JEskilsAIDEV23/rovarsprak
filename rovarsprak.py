@@ -1,4 +1,5 @@
-def rovare(fil_r, prefix = "enc_rs_", frc = 0.5):
+#def rovare(fil_r, prefix = "enc_rs_", frc = 0.5):
+def rovare(fil_r, frc = 0.5):
 
     from check import check_param
     from rs_funktioner import text_imp
@@ -9,7 +10,9 @@ def rovare(fil_r, prefix = "enc_rs_", frc = 0.5):
 
  #   check_encode('rovarsprak_svenskt_text.txt')
 
-    prefix, frc = check_param(frc)
+    #prefix, frc = check_param(frc)
+
+    frc = check_param(frc)
     text_r, fil_r = text_imp(fil_r, frc)
     rsprak = rs_transl(text_r)
     fil_s = sav_fil()

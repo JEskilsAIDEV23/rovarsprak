@@ -66,14 +66,17 @@ def rs_transl(text):
 
     return s2
 
-# text_sav(fil_s, rsprak)
-# ______________________________________________
-# rsprak = utdata s2 från rs_tansl()
-
+#Spara krypterad data i sparfil med eget valt namn
 
 def sav_fil():
     fil_s = input('Vad vill du spara den krypterade filen som: ')
     return fil_s
+
+# Sparar krypterad data till filen fil_s
+# text_sav(fil_s, rsprak)
+# ______________________________________________
+# rsprak = utdata s2 från rs_tansl()
+
 
 def text_sav(fil_s, rsprak):
 
