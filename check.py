@@ -75,22 +75,6 @@ def read_new_file():
         return fil_r
 
 
-def save_new_file(fil_s, fil_r):
-
-    print(f'\nEn fil med namnet {fil_s} finns redan!')
-
-    fil_ns = input('Ange ett nytt filnamn eller skriv över filen med att trycka enter: ')
-
-    if fil_ns == "":
-        fil_ns = fil_s
-    
-    if check_path(fil_ns) == True and fil_r == fil_ns:
-        fil_ns = 'Exception_'+fil_ns
-        print('Exception_prefix angett för att skydda källfilen')
-        
-    return fil_ns
-
-
 def check_encode(fil_s):
 
     with open(fil_s,'r') as f:
@@ -122,6 +106,31 @@ def check_param(prefix, frc):
     return prefix, frc
 
 
+def check_save_file(fil_r, prefix):
+
+    fil_s = prefix+fil_r
+
+    if check_path(fil_s) == False:
+        fil_s = prefix+fil_r
+
+    if check_path(fil_s) == True:
+        print(f'\nEn fil med namnet {fil_s} finns redan!')
+        fil_ns = input('Ange ett nytt filnamn eller skriv över befintlig fil genom att trycka enter: ')
+
+        if fil_ns == "":
+            fil_s = fil_s
+
+        if fil_ns != "":
+            fil_s = prefix+fil_ns
+    
+            if check_path(fil_s) == True:
+                fil_s = 'Exception_'+fil_s
+                print('Exception prefix added')
+
+                return fil_s
+    
+    return fil_s
+        
 
 
     

@@ -1,7 +1,6 @@
 from check import check_char
 from check import check_path
 from check import read_new_file
-from check import save_new_file
 
 #rs_funktioner.py innehåller funktionerna för att läsa in en textfil, kryptera med rövarspråk samt spara 
 # till en ny fil. Kontroller av importen av filen och dess tecken innehåll görs med importerade och implementerade
@@ -31,7 +30,7 @@ def text_imp(fil_r, frc = 0.5):
                 text_r = text_r + i #extraherar texten rad för rad
             
             if (check_char(text_r, frc)) == True: #kontrollerar textinnehållet m.a.p. tecken innehåll
-                return text_r, fil_r, fil_n
+                return text_r, fil_r
                 
             else:
                 exit()
@@ -40,11 +39,11 @@ def text_imp(fil_r, frc = 0.5):
         print("Angiven fil kan inte hittas")
 
         fil_n = read_new_file() # namn på ny textfil att importera
-        text_r, fil_r, fil_n = text_imp(fil_n, frc) #rekursivt anrop av text_imp()
+        text_r, fil_r = text_imp(fil_n, frc) #rekursivt anrop av text_imp()
 
-        return text_r, fil_r, fil_n
+        return text_r, fil_r
         
-    return text_r, fil_r, fil_n
+    return text_r, fil_r
 
 # s2 = rs_transl(text)
 # ____________________
@@ -67,34 +66,16 @@ def rs_transl(text):
 
     return s2
 
-# text_sav(fil_r, fil_n, rsprak, prefix = 'rs_')
+# text_sav(fil_s, rsprak, prefix = 'rs_')
 # ______________________________________________
 # rsprak = utdata s2 från rs_tansl()
-# fil_r = läst fil
-# fil_n = läst fil ifall fil_r inte existerar
 # prefix = en möjlighet att ge sparfilen ett prefix för att underlätta identifiering av krypterade
 # filer samt för att undvika att källfilen skrivs över. 
-# Kontroll ifall en sparfil existerar görs även med check_path()
 
 
-def text_sav(fil_r, fil_n, rsprak, prefix = 'rs_'):
-
-    try:
-        fil_n != ""
-
-    except:
-        fil_r = fil_n 
-
-    fil_s = prefix+fil_r #namnger sparfilen med valt prefix, default = 'rs_'
-
-    if fil_s == fil_r:
-        fil_s = prefix+fil_r #Kontroll att fil_s ändå inte är fil_r
-
-    if check_path(fil_s) == True: #Kontrollerar ifall sparfil redan finns
-        fil_s = save_new_file(fil_s, fil_r) #Ifall sparfil finns ge användare möjlighet att ge nytt namn
+def text_sav(fil_s, rsprak):
 
     with open(fil_s, 'w', encoding = 'utf-8') as sav: #sparar den krypterade filen
-
         sav.write(rsprak)
 
     return print(f"Fil sparad som {fil_s}")

@@ -1,13 +1,18 @@
 def rovare(fil_r, prefix = "rs_", frc = 0.5):
 
+    from check import check_param
     from rs_funktioner import text_imp
     from rs_funktioner import rs_transl
+    from check import check_save_file
     from rs_funktioner import text_sav
 
  #   check_encode('rovarsprak_svenskt_text.txt')
-    text_r, fil_r, fil_n = text_imp(fil_r, frc)
+
+    prefix, frc = check_param(prefix, frc)
+    text_r, fil_r = text_imp(fil_r, frc)
     rsprak = rs_transl(text_r)
-    text_sav(fil_r, fil_n, rsprak, prefix)
+    fil_s = check_save_file(fil_r, prefix)
+    text_sav(fil_s, rsprak)
 
     return rsprak
 
