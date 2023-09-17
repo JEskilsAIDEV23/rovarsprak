@@ -4,16 +4,16 @@ from check import read_new_file
 
 #rs_funktioner.py innehåller funktionerna för att läsa in en textfil, kryptera med rövarspråk samt spara 
 # till en ny fil. Kontroller av importen av filen och dess tecken innehåll görs med importerade och implementerade
-# funktioner som importeras från check.py modulen check_char, check_path, read_new_file, save_new_file.
+# funktioner som importeras från check.py modulen check_char, check_path, read_new_file, check_save_file.
 
 
-# text_r, fil_r, fil_n = text_imp(fil_r, frc)
+# text_r, fil_r = text_imp(fil_r, frc)
 # ___________________________________________
 
 # Importerar en text fil och extraherar texten, kontroll att filen existerar görs med funktionen check_path(fil_r)
 # read_new_file() anropas ifall filen saknas och ger användaren möjlighet att använda en existerande fil och anropar
 # på nytt funktionen text_imp(fil_r, frc)
-# text innehållet kontrolleras med funktionen check_char(), ifall textfilen ges en varning att programmet kommer att
+# text innehållet kontrolleras med funktionen check_char(), ifall textfilen saknar tecken ges en varning att programmet kommer att
 # avslutas, ifall texten innehåller stora mängder tecken som inte finns i det svenska alfabetet samt siffror, matematik
 # ges en varning och fråga om användaren vill fortsätta krypteringen. Ett värde för fraktionen av icke svenska 
 # bokstäver frc, kan sättas av användaren i huvudfunktionen som default är frc = 0.5
@@ -66,11 +66,9 @@ def rs_transl(text):
 
     return s2
 
-# text_sav(fil_s, rsprak, prefix = 'rs_')
+# text_sav(fil_s, rsprak)
 # ______________________________________________
 # rsprak = utdata s2 från rs_tansl()
-# prefix = en möjlighet att ge sparfilen ett prefix för att underlätta identifiering av krypterade
-# filer samt för att undvika att källfilen skrivs över. 
 
 
 def text_sav(fil_s, rsprak):

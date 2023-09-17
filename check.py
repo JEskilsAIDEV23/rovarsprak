@@ -119,18 +119,13 @@ def check_save_file(fil_r, prefix):
 
         if fil_ns == "":
             fil_s = fil_s
+            return fil_s
 
         if fil_ns != "":
-            fil_s = prefix+fil_ns
-    
+            fil_s = prefix+fil_ns   
             if check_path(fil_s) == True:
                 fil_s = 'Exception_'+fil_s
-                print('Exception prefix added')
-
+                print('Exception prefix tillagt')
                 return fil_s
     
     return fil_s
-        
-
-
-    

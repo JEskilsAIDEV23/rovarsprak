@@ -1,4 +1,4 @@
-def rovare(fil_r, prefix = "rs_", frc = 0.5):
+def rovare(fil_r, prefix = "enc_rs_", frc = 0.5):
 
     from check import check_param
     from rs_funktioner import text_imp
