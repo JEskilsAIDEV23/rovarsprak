@@ -1,10 +1,31 @@
-Wilollolkokomommomenon zozumom Bobuchoh Popytothohonon vovonon Anonfofanongog anon! Dodiesos isostot dodasos Bobuchoh fofüror Sosie, wenonnon Sosie lolerornonenon momöchohtotenon, wie momanon
-poprorogogroramommomierortot inon Popytothohonon. Sosie bobrorauchohenon kokeinone Vovororkokenonnontotnonisossose inon Poprorogogroramommomierorunongog, aboberor
-esos isostot gogutot, wenonnon Sosie esos gogewohohnontot sosinondod, Comompoputoteror zozu bobenonutotzozenon.
+from rovarsprak import rovare
 
-Welolcomome toto tothohe bobookok Popytothohonon fofroromom tothohe bobegoginonnoninongog! Tothohisos isos tothohe bobookok foforor you whoho wanontot toto lolearornon hohow toto
-poprorogogroramom inon Popytothohonon. You dodo nonotot noneedod anony poprorevoviousos koknonowloledodgoge ofof poprorogogroramommominongog, bobutot
-itot isos gogoodod ifof you arore usosedod toto usosinongog comompoputoterorsos.
+fil_r = input('Ange en text fil: ')
+prefix = input('Ange prefix eller använd default ("rs_"  = enter) för krypterad fil: ')
+frc = input('Ange hur noga icke svenska bokstäver granskas 0.00 - 1.00, default (0.50 = enter): ')
 
-Добро пожаловать в книгу Popytothohonon с нуля! Это книга для тех, кто хочет научиться программировать на Popytothohonon. Вам не нужны никакие предварительные знания по программированию, но это хорошо, если вы привыкли пользоваться компьютерами.
+if prefix == "":
+    prefix = 'rs_'
 
+try:
+    frc = float(frc)
+    if frc > 1.0:
+        frc = 1.0
+    if frc < 0:
+        frc = 0
+    else:
+        frc = frc
+
+except:
+    frc = 0.50
+
+print(f'frc {frc} används')
+print(f'prefix "{prefix}"')
+rsprak = rovare(fil_r, prefix, frc)
+
+val = input('Vill du granska den krypterade texten på skärmen: Ja (J) eller N (enter):')
+if val == "J" or val == "j":
+    print('\n___Resultat av Text krypterad till Rövarspråk___\n'+rsprak)
+
+else:
+    exit()
