@@ -25,7 +25,7 @@ rsprak = rovare(fil_r, prefix, frc)
 
 val = input('Vill du granska den krypterade texten på skärmen: Ja (J) eller N (enter):')
 if val == "J" or val == "j":
-    print('\n_________\n'+rsprak)
+    print('\n___Resultat av Text krypterad till Rövarspråk___\n'+rsprak)
 
 else:
     exit()
