@@ -1,7 +1,7 @@
 from rovarsprak import rovare
 
 fil_r = input('Ange en text fil: ')
-prefix = input('Ange ett eget prefix för krypterad fil: ')
+prefix = input('Ange prefix eller använd default "rs_" (enter) för krypterad fil: ')
 frc = input('Ange hur noga icke svenska bokstäver granskas 0.00 - 1.00: ')
 
 try:
