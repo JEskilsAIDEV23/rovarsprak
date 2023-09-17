@@ -17,7 +17,7 @@ def rovare(fil_r, prefix = "rs_", frc = 0.5):
 
 fil_r = 'german.txt'
 
-rovare(fil_r,'', frc = 0.99)
+rovare(fil_r,'AA')
 
 #felhantering
 #path fel
