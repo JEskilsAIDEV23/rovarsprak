@@ -1,16 +1,11 @@
-#def rovare(fil_r, prefix = "enc_rs_", frc = 0.5):
 def rovare(fil_r, frc = 0.5):
 
     from check import check_param
+    from check import check_save_file
     from rs_funktioner import text_imp
     from rs_funktioner import rs_transl
     from rs_funktioner import sav_fil
-    from check import check_save_file
     from rs_funktioner import text_sav
-
- #   check_encode('rovarsprak_svenskt_text.txt')
-
-    #prefix, frc = check_param(frc)
 
     frc = check_param(frc)
     text_r, fil_r = text_imp(fil_r, frc)
@@ -22,9 +17,8 @@ def rovare(fil_r, frc = 0.5):
     return rsprak
 
 #felhantering
+#______________
 #path fel
 #filtyp fel
-#hantering av tecken eller nummer som inte ingår i alfabetet
+#hantering av tecken eller nummer som inte ingår i alfabetet och undantag ".,!:; " från felrapport
 #kolla om sparfil finns och är ok att skriva över eller skapa ny
-
-#".,!:; " undantag från felrapport

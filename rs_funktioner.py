@@ -14,7 +14,7 @@ from check import read_new_file
 # read_new_file() anropas ifall filen saknas och ger användaren möjlighet att använda en existerande fil och anropar
 # på nytt funktionen text_imp(fil_r, frc)
 # text innehållet kontrolleras med funktionen check_char(), ifall textfilen saknar tecken ges en varning att programmet kommer att
-# avslutas, ifall texten innehåller stora mängder tecken som inte finns i det svenska alfabetet samt siffror, matematik
+# avslutas, ifall texten innehåller stora mängder tecken som inte finns i det svenska alfabetet samt siffror, matematik symboler
 # ges en varning och fråga om användaren vill fortsätta krypteringen. Ett värde för fraktionen av icke svenska 
 # bokstäver frc, kan sättas av användaren i huvudfunktionen som default är frc = 0.5
 

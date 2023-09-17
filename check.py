@@ -1,13 +1,13 @@
 def check_char(text, frc = 0.5):
 
     l_c = "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖabcdefghijklmnopqrstuvwxyzåäö .,!?;:'"
-    l_lc = '"1234567890+-/\*()%@'
+    l_lc = '"1234567890+-/\*()%@<>'
 
     # l_c common: strängen innehåller de förväntat mest vanliga bokstäver och tecken funna i Svenskt text
     # l_lc less common: strängen innehåller siffror och mindre vanligt förekommande tecken i vanlig svensk text
     # l_un uncommon strängen har inte definierats då den motsvara alla förekommande tecken som inte omfattas av l_c och l_lc 
     #  i utf-8 
-    # Ett default värde 50% eller valt värde som anger att texten innehåller minst 50% svenska bokstäver kan sättas  
+    # Ett default värde på 50% eller ett eget värde av textens innehåll av svenska bokstäver kan sättas som filter för bevakning
 
     txt = text.replace('\n', '') #texten rensas på radbrytning 
     txt = txt.replace('\t', '') #texten rensas på eventuella tabbar 
@@ -21,7 +21,6 @@ def check_char(text, frc = 0.5):
     for i in txt:
         if i not in l_c and i not in l_lc:
             n_un += 1
-         #   print(f'{i}')
         if i in l_lc:
             n_lc += 1
         if i in l_c:
@@ -38,8 +37,8 @@ def check_char(text, frc = 0.5):
 
     if len(txt) == n_sum: #kontroll att textlängd motsvarar antal tecken
 
-        #kontroll av antal tecken, dess relativa andel och ifall det är övervägande icke svenska bokstäver ges en varning till
-        # användaren med ett val att avbryta krypteringen.  
+        #kontroll av antal tecken, dess relativa andel och ifall det är övervägande icke svenska bokstäver vilket ger en varning till
+        # användaren med ett val att kunna avbryta krypteringen.  
 
         if n_un/n_sum > n_c/n_sum or n_lc/n_sum > n_c/n_sum or n_c/n_sum < frc:
 
@@ -66,7 +65,7 @@ def check_path(file):
 
 def read_new_file():
 
-    fil_r = input('Ange en ny path+fil? eller avsluta programmet med enbart enter: ')
+    fil_r = input('Ange en ny fil? eller avsluta programmet med enbart enter: ')
 
     if fil_r == "":
         print('Programmet avslutas!')
@@ -117,7 +116,7 @@ def check_save_file(fil_s):
             
         if check_path(fil_s) == True:
             fil_s = 'Exception_'+fil_s
-            print('Exception prefix tillagt för att skydda en annan befintlig fil')
+            print('Exception prefix tillagt för att skydda en befintlig fil')
             
         return fil_s
     
