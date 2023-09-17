@@ -50,9 +50,9 @@ def text_imp(fil_r, frc = 0.5):
 # ____________________
 # text = utdata text_r från text_imp()
 #
-# Krypterar texten enligt specifikationen för rövarspråket, användaren har fått ett aktivt val att
+# Krypterar texten enligt specifikationen för rövarspråket, användaren har innan fått ett aktivt val att
 # att fortsätta ifall texten innehåller många tecken och siffror som inte finns i det svenska alfabetet.
-# s2 är den krypterade texten som sedan 
+# s2 är variablen som innehåller den krypterade texten 
 
 
 def rs_transl(text):
@@ -71,9 +71,9 @@ def rs_transl(text):
 # ______________________________________________
 # rsprak = utdata s2 från rs_tansl()
 # fil_r = läst fil
-# fil_n = fil ifall fil_r inte existerade
-# prefix = en möjlighet att ge sparfilen ett automatiskt skript för att underlätta identifiering av krypterade
-# filer samt för att undvika att någon fil skrivs över. 
+# fil_n = läst fil ifall fil_r inte existerar
+# prefix = en möjlighet att ge sparfilen ett prefix för att underlätta identifiering av krypterade
+# filer samt för att undvika att källfilen skrivs över. 
 # Kontroll ifall en sparfil existerar görs även med check_path()
 
 
@@ -88,7 +88,7 @@ def text_sav(fil_r, fil_n, rsprak, prefix = 'rs_'):
     fil_s = prefix+fil_r #namnger sparfilen med valt prefix, default = 'rs_'
 
     if fil_s == fil_r:
-        fil_s = prefix+fil_r
+        fil_s = prefix+fil_r #Kontroll att fil_s ändå inte är fil_r
 
     if check_path(fil_s) == True: #Kontrollerar ifall sparfil redan finns
         fil_s = save_new_file(fil_s) #Ifall sparfil finns ge användare möjlighet att ge nytt namn

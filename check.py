@@ -46,7 +46,7 @@ def check_char(text, frc = 0.5):
             print('VARNING! Input filen innehåller flertalet siffror och ovanliga tecken förutom svenska bokstäver')
             print('Kontrollera ifall du angett en korrekt text-fil\n')
             print(f'character fractions: \nuncommon {n_un} ({n_un/n_sum:.3}) \nless common {n_lc} ({n_lc/n_sum:.3}) \ncommon {n_c} ({n_c/n_sum:.3})')
-            val = input('\nKrypteringen till rövarspråk kommer inte vara fullständig, J (fortsätt) avsluta (enter)')
+            val = input('\nKrypteringen till rövarspråk kommer inte vara fullständig, J (fortsätt), Avsluta (enter)')
 
             if val == "J" or val == "j":
                 return True
@@ -84,7 +84,13 @@ def save_new_file(fil_s):
     if fil_ns == "":
 
         fil_ns = fil_s
-            
+
+        if check_path(fil_ns) == True:
+
+            fil_ns = 'Exception_'+fil_ns
+
+            save_new_file(fil_ns)
+ 
     return fil_ns
 
 
@@ -94,6 +100,29 @@ def check_encode(fil_s):
         encode = f.encoding
         print(f'inläst fil av typen {encode}')
     return encode
+
+
+def check_param(prefix, frc):
+
+    if prefix == "":
+        prefix = 'enc_rs_'
+    
+    try:
+        frc = float(frc)
+        if frc > 1.0:
+            frc = 1.0
+        if frc < 0:
+            frc = 0
+        else:
+            frc = frc
+
+    except:
+        frc = 0.50
+
+    print(f'\nfrc = {frc}')
+    print(f'prefix = "{prefix}"')
+
+    return prefix, frc
 
 
 
