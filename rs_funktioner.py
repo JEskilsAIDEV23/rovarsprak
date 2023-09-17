@@ -71,6 +71,10 @@ def rs_transl(text):
 # rsprak = utdata s2 från rs_tansl()
 
 
+def sav_fil():
+    fil_s = input('Vad vill du spara den krypterade filen som: ')
+    return fil_s
+
 def text_sav(fil_s, rsprak):
 
     with open(fil_s, 'w', encoding = 'utf-8') as sav: #sparar den krypterade filen

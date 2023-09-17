@@ -83,10 +83,11 @@ def check_encode(fil_s):
     return encode
 
 
-def check_param(prefix, frc):
+#def check_param(prefix, frc):
+def check_param(frc):
 
-    if prefix == "":
-        prefix = 'enc_rs_'
+ #   if prefix == "":
+ #       prefix = 'enc_rs_'
     
     try:
         frc = float(frc)
@@ -101,17 +102,20 @@ def check_param(prefix, frc):
         frc = 0.50
 
     print(f'\nfrc = {frc}')
-    print(f'prefix = "{prefix}"')
+ #   print(f'prefix = "{prefix}"')
 
-    return prefix, frc
+ #   return prefix, frc
+    return frc
 
 
-def check_save_file(fil_r, prefix):
+#def check_save_file(fil_r, prefix):
+def check_save_file(fil_s):
 
-    fil_s = prefix+fil_r
+ #   fil_s = prefix+fil_r
 
     if check_path(fil_s) == False:
-        fil_s = prefix+fil_r
+ #       fil_s = prefix+fil_r
+        return fil_s
 
     if check_path(fil_s) == True:
         print(f'\nEn fil med namnet {fil_s} finns redan!')
@@ -122,10 +126,10 @@ def check_save_file(fil_r, prefix):
             return fil_s
 
         if fil_ns != "":
-            fil_s = prefix+fil_ns   
+            fil_s = fil_ns   
             if check_path(fil_s) == True:
                 fil_s = 'Exception_'+fil_s
-                print('Exception prefix tillagt')
+                print('Exception prefix tillagt för att skydda en befintlig fil')
                 return fil_s
     
     return fil_s
