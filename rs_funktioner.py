@@ -91,7 +91,7 @@ def text_sav(fil_r, fil_n, rsprak, prefix = 'rs_'):
         fil_s = prefix+fil_r #Kontroll att fil_s ändå inte är fil_r
 
     if check_path(fil_s) == True: #Kontrollerar ifall sparfil redan finns
-        fil_s = save_new_file(fil_s) #Ifall sparfil finns ge användare möjlighet att ge nytt namn
+        fil_s = save_new_file(fil_s, fil_r) #Ifall sparfil finns ge användare möjlighet att ge nytt namn
 
     with open(fil_s, 'w', encoding = 'utf-8') as sav: #sparar den krypterade filen
 

@@ -75,22 +75,19 @@ def read_new_file():
         return fil_r
 
 
-def save_new_file(fil_s):
+def save_new_file(fil_s, fil_r):
 
     print(f'\nEn fil med namnet {fil_s} finns redan!')
 
     fil_ns = input('Ange ett nytt filnamn eller skriv över filen med att trycka enter: ')
 
     if fil_ns == "":
-
         fil_ns = fil_s
-
-        if check_path(fil_ns) == True:
-
-            fil_ns = 'Exception_'+fil_ns
-
-            save_new_file(fil_ns)
- 
+    
+    if check_path(fil_ns) == True and fil_r == fil_ns:
+        fil_ns = 'Exception_'+fil_ns
+        print('Exception_prefix angett för att skydda källfilen')
+        
     return fil_ns
 
 
