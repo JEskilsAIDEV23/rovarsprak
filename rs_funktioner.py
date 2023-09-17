@@ -23,14 +23,6 @@ def text_imp(fil_r, frc = 0.5):
 
     text_r = ""
     fil_n = "" # blank ifall textfil som ska läsas existerar
-
-    if check_path(fil_r) == False:  
-        print("Angiven fil kan inte hittas")
-
-        fil_n = read_new_file() # namn på ny textfil att importera
-        text_r, fil_r, fil_n = text_imp(fil_n, frc) #rekursivt anrop av text_imp()
-
-        return text_r, fil_r, fil_n
     
     if check_path(fil_r) == True:
         with open(fil_r, 'r', encoding = 'utf-8') as f: #läser textfil
@@ -43,6 +35,14 @@ def text_imp(fil_r, frc = 0.5):
                 
             else:
                 exit()
+
+    if check_path(fil_r) == False:  
+        print("Angiven fil kan inte hittas")
+
+        fil_n = read_new_file() # namn på ny textfil att importera
+        text_r, fil_r, fil_n = text_imp(fil_n, frc) #rekursivt anrop av text_imp()
+
+        return text_r, fil_r, fil_n
         
     return text_r, fil_r, fil_n
 
@@ -87,9 +87,11 @@ def text_sav(fil_r, fil_n, rsprak, prefix = 'rs_'):
 
     fil_s = prefix+fil_r #namnger sparfilen med valt prefix, default = 'rs_'
 
+    if fil_s == fil_r:
+        fil_s = prefix+fil_r
+
     if check_path(fil_s) == True: #Kontrollerar ifall sparfil redan finns
         fil_s = save_new_file(fil_s) #Ifall sparfil finns ge användare möjlighet att ge nytt namn
-
 
     with open(fil_s, 'w', encoding = 'utf-8') as sav: #sparar den krypterade filen
 

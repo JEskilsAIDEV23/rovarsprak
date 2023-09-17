@@ -82,8 +82,9 @@ def save_new_file(fil_s):
     fil_ns = input('Ange ett nytt filnamn eller skriv över filen med att trycka enter: ')
 
     if fil_ns == "":
+
         fil_ns = fil_s
-    
+            
     return fil_ns
 
 
