@@ -1,3 +1,6 @@
+from rs_funktioner import text_imp
+from rs_funktioner import rs_transl
+from rs_funktioner import text_sav
 
 
 #______Main______
@@ -12,9 +15,9 @@ def rovare(fil_r, prefix = "rs_", frc = 0.5):
 
     return rsprak
 
-fil_r = 'texter.txt'
+fil_r = 'german.txt'
 
-rovare(fil_r,'rs_', frc = 1)
+rovare(fil_r,'', frc = 0.99)
 
 #felhantering
 #path fel

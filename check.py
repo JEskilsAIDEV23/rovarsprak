@@ -21,7 +21,7 @@ def check_char(text, frc = 0.5):
     for i in txt:
         if i not in l_c and i not in l_lc:
             n_un += 1
-            print(f'{i}')
+         #   print(f'{i}')
         if i in l_lc:
             n_lc += 1
         if i in l_c:
@@ -29,7 +29,7 @@ def check_char(text, frc = 0.5):
     
     n_sum = n_un + n_lc + n_c
 
-    if len(txt) == 0: #Ifall en tom text fil läses in ges fel meddelande och programmet avslutas
+    if len(txt) == 0: #Ifall en tom text fil läses in ges ett felmeddelande och programmet avslutas
 
         print('VARNING! Input filen innehåller inga tecken!')
         print('Kontrollera ifall du angett en korrekt text-fil')
@@ -46,7 +46,7 @@ def check_char(text, frc = 0.5):
             print('VARNING! Input filen innehåller flertalet siffror och ovanliga tecken förutom svenska bokstäver')
             print('Kontrollera ifall du angett en korrekt text-fil\n')
             print(f'character fractions: \nuncommon {n_un} ({n_un/n_sum:.3}) \nless common {n_lc} ({n_lc/n_sum:.3}) \ncommon {n_c} ({n_c/n_sum:.3})')
-            val = input('\nKrypteringen till rövarspråk kommer inte vara fullständig, vill du fortsätta med denna fil? J/N')
+            val = input('\nKrypteringen till rövarspråk kommer inte vara fullständig, J (fortsätt) avsluta (enter)')
 
             if val == "J" or val == "j":
                 return True
@@ -76,6 +76,8 @@ def read_new_file():
 
 
 def save_new_file(fil_s):
+
+    print(f'\nEn fil med namnet {fil_s} finns redan!')
 
     fil_ns = input('Ange ett nytt filnamn eller skriv över filen med att trycka enter: ')
 
