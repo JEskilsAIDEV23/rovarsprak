@@ -1,0 +1,5 @@
+Filen l�stes som UTF-8,  Filen sparades som cp1252
+Filen l�stes som cp1252,  Filen sparades som UTF-8
+Välkommen till boken Python från början! Detta är boken för dig som vill lära dig att
+programera i Python. Du begöver inte ha några tidigare kunskaper i programmering, men
+det är bra om du är van att använda datorer.
