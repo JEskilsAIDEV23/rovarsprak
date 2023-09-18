@@ -21,12 +21,10 @@ def check_txt2(fil_r, r_encode, w_encode):
         sav.write(txt_r)
 
     print(fil_s)
-
     return fil_s
-
 
     #    r_encode = 'UTF-8'
     #    w_encode = 'cp1252'
 
-fil_s = check_txt2('russian.txt', 'UTF-8', 'UTF-8')
-fil_s1 = check_txt2(fil_s, 'UTF-8', 'cp1252')
+fil_s = check_txt2('texter.txt', 'UTF-8', 'cp1252')
+fil_s1 = check_txt2(fil_s, 'cp1252', 'UTF-8')

@@ -1,4 +1,5 @@
-Willkommen zum Buch Python von Anfang an! Dies ist das Buch fÃ¼r Sie, wenn Sie lernen mÃ¶chten, wie man
+Filen lästes som UTF-8,  Filen sparades som cp1252
+Willkommen zum Buch Python von Anfang an! Dies ist das Buch für Sie, wenn Sie lernen möchten, wie man
 programmiert in Python. Sie brauchen keine Vorkenntnisse in Programmierung, aber
 es ist gut, wenn Sie es gewohnt sind, Computer zu benutzen.
 
