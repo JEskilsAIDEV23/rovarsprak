@@ -8,11 +8,11 @@ def check_txt2(fil_r, r_encode, w_encode):
             i = i.replace('\n', '')
             txt_r = txt_r + i + '\n'
 
-    fil_s = fil_r + f'F-{r_encode}'
+    fil_s = fil_r + f'R-{r_encode}'
     comment = f'Filen lästes som {r_encode}, '
     print(f'Filen lästes som {r_encode}')
 
-    fil_s = fil_s + f'-T-{w_encode}.txt'
+    fil_s = fil_s + f'-W-{w_encode}.txt'
     comment = comment +  f' Filen sparades som {w_encode}'
     print(f'Filen sparades som {w_encode}')
 
@@ -28,5 +28,5 @@ def check_txt2(fil_r, r_encode, w_encode):
     #    r_encode = 'UTF-8'
     #    w_encode = 'cp1252'
 
-fil_s = check_txt2('svenskt_text.txt', 'cp1252', 'cp1252')
-fil_s1 = check_txt2(fil_s, 'cp1252', 'cp1252')
+fil_s = check_txt2('russian.txt', 'UTF-8', 'UTF-8')
+fil_s1 = check_txt2(fil_s, 'UTF-8', 'cp1252')
