@@ -1,0 +1,5 @@
+Filen lästes som cp1252
+
+VÃ¤lkommen till boken Python frÃ¥n bÃ¶rjan! Detta Ã¤r boken fÃ¶r dig som vill lÃ¤ra dig att
+programera i Python. Du begÃ¶ver inte ha nÃ¥gra tidigare kunskaper i programmering, men
+det Ã¤r bra om du Ã¤r van att anvÃ¤nda datorer.
