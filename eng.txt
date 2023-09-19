@@ -1,0 +1,3 @@
+Welcome to the book Python from the beginning! This is the book for you who want to learn how to
+program in Python. You do not need any previous knowledge of programming, but
+it is good if you are used to using computers.
