@@ -43,4 +43,4 @@ def rovare(fil_r, fil_s = "", encode = 'utf-8', frc = 0.5):
 #hantering av tecken eller nummer som inte ingår i alfabetet och undantag ".,!:; " från felrapport
 #kolla om sparfil finns och är ok att skriva över eller skapa ny
 
-rovare('cptext.txt','text.txt')
+rovare('svenskt_text.txt','text.txt','ascii')
