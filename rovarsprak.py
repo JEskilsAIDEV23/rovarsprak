@@ -44,4 +44,4 @@ def rovare(fil_r, fil_s = "", encode = 'utf-8', frc = 0.5):
 #kolla om sparfil finns och är ok att skriva över eller skapa ny
 
 #
-# rovare('russian.txt','text_rus.txt')
+rovare('russian.txt','text_rus.txt','ascii')

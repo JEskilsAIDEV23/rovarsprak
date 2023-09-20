@@ -97,7 +97,7 @@ def sav_fil():
 # text_sav(fil_s, rsprak, encode)
 # Sparar krypterad data till filen fil_s
 # default sparas krypterad text i formatet UTF-8
-# encode parameter ges ifall användaren vill spara till en egen vald teckentabell. Ifall vald 
+# encode parameter ges ifall användaren vill spara till 'cp1252'. Ifall vald 
 # teckentabell inte fungerar görs ett försök att spara som utf-8, och prefixet Exception UTF-8_ 
 # läggs till i filnamnet. ifall det inte går att spara som utf-8 avslutas programmet
 # användaren ges information ifall tomma sparfiler skapats vid exception errors  
@@ -108,6 +108,13 @@ def sav_fil():
 
 
 def text_sav(fil_s, rsprak, encode = 'utf-8'):
+
+    if encode == 'cp1252' or encode == 'utf-8':
+        encode = encode
+    else:
+        encode_f = encode
+        encode = 'utf-8'
+        print(f'text kan bara sparas till utf-8 eller cp1252 inte {encode_f}')
 
     try:
         with open(fil_s, 'w', encoding = encode) as sav: #sparar den krypterade filen
