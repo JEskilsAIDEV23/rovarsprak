@@ -36,12 +36,4 @@ def rovare(fil_r, fil_s = "", encode = 'utf-8', frc = 0.5):
 
     return rsprak
 
-#felhantering
-#______________
-#path fel
-#filtyp fel
-#hantering av tecken eller nummer som inte ingår i alfabetet och undantag ".,!:; " från felrapport
-#kolla om sparfil finns och är ok att skriva över eller skapa ny
-
-#
-rovare('russian.txt','text_rus.txt','ascii')
+#rovare('russian.txt','text_rus.txt')

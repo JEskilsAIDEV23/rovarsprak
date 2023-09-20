@@ -130,26 +130,6 @@ def check_fil_r(fil_r):
             print('Programmet avslutas')
             exit()
 
-        # ifall fel kvarstår med att läsa filen, ges ett försök att läsa filen med en 
-        # annan kodtabell än UTF-8 eller cp1252
-
-        #    encode_my = input('Ange en möjlig teckentabell eller avsluta programmet (enter): ')
-        #    if encode_my == "":
-        #        exit()
-        #    else:
-        #        try:
-        #            print(f'Försöker läsa filen {fil_r} som {encode_my}')
-         #           with open(fil_r, 'r', encoding = encode_my) as f:
-         #               for i in f:
-         #                   txt = txt + i                  
-         #           encode = encode_my
-          #          return encode
-                    
-          #      except UnicodeDecodeError:
-          #          print(f'{fil_r} är inte heller formaterad som vald {encode_my}')
-           #         print('Programmet avslutas')
-           #         exit()
-
 # check_param(frc) 
 # kontrollerar att angivet värde för frc är 0 - 1, och omvandlar till float
 

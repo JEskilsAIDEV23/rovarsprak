@@ -5,6 +5,8 @@ from rovarsprak import rovare
 # ifall inga värden anges
 # Val att se den sparade krypterade texten på skärmen ges
 
+
+
 fil_r = input('Ange en text fil: ')
 val_e = input('Vill du spara filen i annat format än UTF-8? Ja (J), Nej (enter = UTF-8):')
 
@@ -18,15 +20,12 @@ else:
 
 frc = input('Ange hur noga icke svenska bokstäver granskas 0.00 - 1.00, default (0.50 = enter): ')
 
-#Huvudfunktionen anropar funktioner för att läsa och kontrollera inputfilen och dess textinnehåll 
-# samt för att kryptera och kontrollera att det går att spara resultatet i en ny textfil med default
-# eller vald teckentabell. 
-
-rsprak = rovare(fil_r, "", encode, frc)
-
-# Välj att visa resultat på skärm eller avsluta
+    #Huvudfunktionen anropar funktioner för att läsa och kontrollera inputfilen och dess textinnehåll 
+    # samt för att kryptera och kontrollera att det går att spara resultatet i en ny textfil med default
+    # eller vald teckentabell. 
 val = input('\nVill du granska den krypterade texten på skärmen: Ja (J) eller N (enter):')
 if val == "J" or val == "j":
     print('\n___Resultat av Text krypterad till Rövarspråk___\n'+rsprak)
 else:
     exit()
+

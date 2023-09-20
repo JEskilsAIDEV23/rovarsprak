@@ -115,6 +115,7 @@ def text_sav(fil_s, rsprak, encode = 'utf-8'):
         encode_f = encode
         encode = 'utf-8'
         print(f'text kan bara sparas till utf-8 eller cp1252 inte {encode_f}')
+        print(f'filen {fil_s} sparas som utf-8')
 
     try:
         with open(fil_s, 'w', encoding = encode) as sav: #sparar den krypterade filen
