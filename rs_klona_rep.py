@@ -33,21 +33,18 @@ def klona_remote_git(repo_url):
 
 # Funktionen RS_Git_txt() skapar en lista över filerna i '/tmp/repo' och filtrerar och krypterar de filer 
 # som har filändelsen .txt
-# Ifall användaren vill gå igenom filerna och använda granskningsfunktionen så skapas även en 
-# textfil med en lista över path och filnamn i mappen '/tmp/kryptering' ifall användaren  vill 
-# använda rs_test.py UI.
-# För namngivning av utdata filen då krypteringen sker från repository och troligen i batcher 
-# ges varje fil ett prefix RS_#_ före filnamnet där # är ett nummer.
-# För enkelhetens skull så körs kryptering i batcher med defaultinställningar.
+# Ifall användaren vill gå igenom filerna så skapas en textfil 'lista_text_filer.csv' i svenskt csv-format
+#  med ';' som separator mellan de okrypterade och krypterade filerna angivna med path och filnamn i mappen 
+# '/tmp/kryptering'. Lämplgt Ifall användaren vill köra enstaka filer i UI.
+# För namngivning av utdata filen då krypteringen sker från repository och troligtvis i batcher namnges varje 
+# fil med ett prefix RS_#_ före filnamnet där # är ett nummer.
+# För att minimera risken för granskningsstopp så körs kryptering i batcher med default inställningar och frc = 0.
 
 def RS_Git_txt():
 
     path_s = 'c:\\tmp\\krypterat\\'
 
-    with open(path_s+'lista_text_filer.txt', 'w', encoding = 'utf-8') as sav:
-
-        sav.write(f'I mappen {path_s} sparas alla krypterade filer samt den här listan över\
-                  okrypterade och krypterade filer med prefix RS_#_ där # är ett nummer.\n')
+    with open(path_s+'lista_text_filer.csv', 'w', encoding = 'utf-8') as sav:
 
         file_list = os.listdir("/tmp/repo")
 
@@ -55,7 +52,7 @@ def RS_Git_txt():
 
         for i in file_list:
             if '.txt' in i:
-                sav.write('c:\\tmp\\repo\\'+i+'\t'+path_s+'RS_'+str(n)+'_'+i+'\n')
-                rovare('c:\\tmp\\repo\\'+i, path_s+'RS_'+str(n)+'_'+i, encode = 'utf-8', frc = 0.1)
+                sav.write('c:\\tmp\\repo\\'+i+';'+path_s+'RS_'+str(n)+'_'+i+'\n')
+                rovare('c:\\tmp\\repo\\'+i, path_s+'RS_'+str(n)+'_'+i, encode = 'utf-8', frc = 0)
                 n +=1
 
