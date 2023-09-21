@@ -46,7 +46,7 @@ def RS_Git_txt():
 
     with open(path_s+'lista_text_filer.txt', 'w', encoding = 'utf-8') as sav:
 
-        sav.write(f'I mappen {path_s} sparas alla krypterade filer samt den här listan över\n\
+        sav.write(f'I mappen {path_s} sparas alla krypterade filer samt den här listan över\
                   okrypterade och krypterade filer med prefix RS_#_ där # är ett nummer.\n')
 
         file_list = os.listdir("/tmp/repo")

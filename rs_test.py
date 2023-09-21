@@ -2,7 +2,6 @@ from rovarsprak import rovare
 from rs_klona_rep import RS_Git_txt
 from rs_klona_rep import klona_remote_git
 
-
 def rs_ui():
 
     # användargränsnitt som anropar huvudfunktionen rovare(fil_r, frc, encode)

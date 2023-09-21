@@ -36,4 +36,3 @@ def rovare(fil_r, fil_s = "", encode = 'utf-8', frc = 0.5):
 
     return rsprak
 
-#rovare('russian.txt','text_rus.txt')
