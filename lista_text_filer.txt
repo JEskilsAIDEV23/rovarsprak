@@ -1,0 +1,1 @@
+c:\tmp\repo\svenskt_text.txt	c:\tmp\krypterat\RS_0_svenskt_text.txt
