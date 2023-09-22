@@ -10,15 +10,16 @@ def rs_ui():
     # Val att se den sparade krypterade texten på skärmen ges
 
     fil_r = input('Ange en text fil: ')
-    val_e = input('Vill du spara filen i annat format än UTF-8? Ja (J), Nej (enter = UTF-8):')
+    val_e = input('Vill du spara filen i cp1252 Ja (J), Nej (enter = UTF-8):')
 
     if val_e == "J" or val_e == "j":
-        encode = input('Ange Teckentabell ex. cp1252: ')
+        encode = 'cp1252'
         if encode == "":
-            print('Ingen tabell vald, UTF-8 används')
+            print('UTF-8 används')
             encode = 'utf-8'
     else:
         encode = 'utf-8'
+        print('UTF-8 används')
 
     frc = input('Ange hur noga icke svenska bokstäver granskas 0.00 - 1.00, default (0.50 = enter): ')
 
@@ -46,10 +47,12 @@ def rs_Git():
         #repo_url = 'https://github.com/AIDEV23S/svText'
         klona_remote_git(repo_url) #Klonar angivet Git
 
+
     except:
         print(f'Det gick inte att klona angivet repository {repo_url}')
-        print('Programmet avslutas')
+        print('Ta bort den gamla mappen samt krypterat mappen')
         exit()
+        
 
     RS_Git_txt() #Krypterar de text-filer som finns i angivet Git
 

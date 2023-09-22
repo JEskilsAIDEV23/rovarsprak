@@ -1,7 +1,7 @@
 # check_char(text, frc = 0.5)
 # Funktionen kvantifierar de tecken som ska krypteras utifrån förekomst
 # i svenska alfabetet och ifall de är siffor eller andra symboler.
-# Funktionen kontrollerar även att textfilen inte var tom.
+# Funktionen kontrollerar även att textfilen inte är tom.
 
 def check_char(text, frc = 0.5):
 
@@ -46,32 +46,27 @@ def check_char(text, frc = 0.5):
 
     if len(txt) == n_sum: #kontroll att textlängd motsvarar antal tecken
 
-        #kontroll av antal tecken, dess relativa andel och ifall det är övervägande icke svenska bokstäver vilket ger en varning till
-        # användaren med ett val att kunna avbryta krypteringen.  
+        #kontroll av antal tecken, dess relativa andel och ifall det är övervägande icke svenska bokstäver 
 
         if n_un/n_sum > n_c/n_sum or n_lc/n_sum > n_c/n_sum or n_c/n_sum < frc:
 
             print('VARNING! Input filen innehåller flertalet siffror och ovanliga tecken förutom svenska bokstäver')
             print('Kontrollera ifall du angett en korrekt text-fil\n')
             print(f'character fractions: \nuncommon {n_un} ({n_un/n_sum:.3}) \nless common {n_lc} ({n_lc/n_sum:.3}) \ncommon {n_c} ({n_c/n_sum:.3})')
-   #         val = input('\nKrypteringen till rövarspråk kommer inte vara fullständig, J (fortsätt), Avsluta (enter)')
 
-   #         if val == "J" or val == "j":
             if status == True:
-         #       return True
+
                 return status, n_c, n_sum
             else:
                 status = False
                 return status, n_c, n_sum
-                #return False
+
     else:
 
         print('Exception')
 
         status = False
         return status, n_c, n_sum
-
-    #    return False
             
     return status, n_c, n_sum
 

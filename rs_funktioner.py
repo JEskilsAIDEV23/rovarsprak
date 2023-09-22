@@ -20,7 +20,7 @@ def read_new_file():
 # funktioner som importeras från check.py modulen check_char, check_path, check_fil_r
 #
 #
-# text_r, fil_r = text_imp(fil_r, frc)
+# text_r, fil_r, n_c, n_sum = text_imp(fil_r, frc)
 # 
 # Importerar en text fil och extraherar texten, kontroll att filen existerar görs med funktionen check_path(fil_r)
 # read_new_file() anropas ifall filen saknas och ger användaren möjlighet att använda en existerande fil och anropar
@@ -29,6 +29,7 @@ def read_new_file():
 # avslutas, ifall texten innehåller stora mängder tecken som inte finns i det svenska alfabetet samt siffror, matematik symboler
 # ges en varning och fråga om användaren vill fortsätta krypteringen. Ett värde för fraktionen av icke svenska 
 # bokstäver frc, kan sättas av användaren i huvudfunktionen som default är frc = 0.5
+# n_c och n_sum variablerna innehåller antalet tecken i texten. 
 
 def text_imp(fil_r, frc = 0.5):
 
