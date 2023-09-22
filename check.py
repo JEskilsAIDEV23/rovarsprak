@@ -5,6 +5,8 @@
 
 def check_char(text, frc = 0.5):
 
+    status = True
+
     l_c = "ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖabcdefghijklmnopqrstuvwxyzåäö .,!?;:'"
     l_lc = '"1234567890+-/\*()%@<>'
 
@@ -37,8 +39,10 @@ def check_char(text, frc = 0.5):
 
         print('VARNING! Input filen innehåller inga tecken!')
         print('Kontrollera ifall du angett en korrekt text-fil')
-        print('Programmet avslutas')
-        return False
+    #    print('Programmet avslutas')
+    #    return False
+        status = False
+        return status, n_c
 
     if len(txt) == n_sum: #kontroll att textlängd motsvarar antal tecken
 
@@ -53,15 +57,23 @@ def check_char(text, frc = 0.5):
             val = input('\nKrypteringen till rövarspråk kommer inte vara fullständig, J (fortsätt), Avsluta (enter)')
 
             if val == "J" or val == "j":
-                return True
+                status = True
+         #       return True
+                return status, n_c
             else:
-                return False
+                status = False
+                return status, n_c
+                #return False
     else:
 
         print('Exception')
-        return False
+
+        status = False
+        return status, n_c
+
+    #    return False
             
-    return True
+    return status, n_c
 
 # check_path(file)
 # kontrollerar ifal en fil finns redan i katalogen

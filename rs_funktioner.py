@@ -44,21 +44,25 @@ def text_imp(fil_r, frc = 0.5):
             for i in f:
                 text_r = text_r + i #extraherar texten rad för rad
             
-            if (check_char(text_r, frc)) == True: #kontrollerar textinnehållet m.a.p. tecken innehåll
-                return text_r, fil_r
+ #           if (check_char(text_r, frc)) == True: #kontrollerar textinnehållet m.a.p. tecken innehåll
+            status, n_c = check_char(text_r, frc)
+            if status == True:
+                return text_r, fil_r, n_c
                 
             else:
-                exit()
+                fil_r = 'TOM_'+fil_r
+                return text_r, fil_r, n_c
+ #               exit()
 
     if check_path(fil_r) == False:  
         print("Angiven fil kan inte hittas")
 
         fil_n = read_new_file() # fil_n namn på ny textfil att importera
-        text_r, fil_r = text_imp(fil_n, frc) #rekursivt anrop av text_imp() fil_r motsvaras nu av fil_n
+        text_r, fil_r, n_c = text_imp(fil_n, frc) #rekursivt anrop av text_imp() fil_r motsvaras nu av fil_n
 
-        return text_r, fil_r
+        return text_r, fil_r, n_c
         
-    return text_r, fil_r
+    return text_r, fil_r, n_c
 
 # s2 = rs_transl(text)
 # ____________________
