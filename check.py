@@ -42,7 +42,7 @@ def check_char(text, frc = 0.5):
     #    print('Programmet avslutas')
     #    return False
         status = False
-        return status, n_c
+        return status, n_c, n_sum
 
     if len(txt) == n_sum: #kontroll att textlängd motsvarar antal tecken
 
@@ -54,26 +54,26 @@ def check_char(text, frc = 0.5):
             print('VARNING! Input filen innehåller flertalet siffror och ovanliga tecken förutom svenska bokstäver')
             print('Kontrollera ifall du angett en korrekt text-fil\n')
             print(f'character fractions: \nuncommon {n_un} ({n_un/n_sum:.3}) \nless common {n_lc} ({n_lc/n_sum:.3}) \ncommon {n_c} ({n_c/n_sum:.3})')
-            val = input('\nKrypteringen till rövarspråk kommer inte vara fullständig, J (fortsätt), Avsluta (enter)')
+   #         val = input('\nKrypteringen till rövarspråk kommer inte vara fullständig, J (fortsätt), Avsluta (enter)')
 
-            if val == "J" or val == "j":
-                status = True
+   #         if val == "J" or val == "j":
+            if status == True:
          #       return True
-                return status, n_c
+                return status, n_c, n_sum
             else:
                 status = False
-                return status, n_c
+                return status, n_c, n_sum
                 #return False
     else:
 
         print('Exception')
 
         status = False
-        return status, n_c
+        return status, n_c, n_sum
 
     #    return False
             
-    return status, n_c
+    return status, n_c, n_sum
 
 # check_path(file)
 # kontrollerar ifal en fil finns redan i katalogen

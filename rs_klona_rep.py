@@ -52,8 +52,8 @@ def RS_Git_txt():
 
         for i in file_list:
             if '.txt' in i:
-                rsprak, n_c = rovare('c:\\tmp\\repo\\'+i, path_s+'RS_'+str(n)+'_'+i, encode = 'utf-8', frc = 0)
-                sav.write('c:\\tmp\\repo\\'+i+';'+path_s+'RS_'+str(n)+'_'+i+';'+str(n_c)+'\n')
+                rsprak, n_c, n_sum = rovare('c:\\tmp\\repo\\'+i, path_s+'RS_'+str(n)+'_'+i, encode = 'utf-8', frc = 0)
+                sav.write('c:\\tmp\\repo\\'+i+';'+path_s+'RS_'+str(n)+'_'+i+';'+str(n_c)+';'+str(n_sum)+'\n')
                 
                 n +=1
 

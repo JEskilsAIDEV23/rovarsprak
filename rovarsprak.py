@@ -23,7 +23,7 @@ def rovare(fil_r, fil_s = "", encode = 'utf-8', frc = 0.5):
     from rs_funktioner import text_sav
 
     frc = check_param(frc)
-    text_r, fil_r, n_c = text_imp(fil_r, frc)
+    text_r, fil_r, n_c, n_sum = text_imp(fil_r, frc)
     rsprak = rs_transl(text_r)
 
     if fil_s == "":
@@ -34,5 +34,5 @@ def rovare(fil_r, fil_s = "", encode = 'utf-8', frc = 0.5):
     fil_s = check_save_file(fil_s)
     text_sav(fil_s, rsprak, encode)
 
-    return rsprak, n_c
+    return rsprak, n_c, n_sum
 

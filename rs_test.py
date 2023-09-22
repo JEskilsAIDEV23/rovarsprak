@@ -26,7 +26,7 @@ def rs_ui():
         # samt för att kryptera och kontrollera att det går att spara resultatet i en ny textfil med default
         # eller vald teckentabell.
 
-    rsprak, nc = rovare(fil_r,'', encode = 'utf-8', frc = 0.5)
+    rsprak, n_c, n_sum = rovare(fil_r,'', encode = 'utf-8', frc = 0.5)
 
     val = input('\nVill du granska den krypterade texten på skärmen: Ja (J) eller N (enter):')
     if val == "J" or val == "j":
