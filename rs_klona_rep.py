@@ -67,3 +67,7 @@ def RS_Git_txt():
                 sav.write(rep_w+i+';'+path_s+'RS_'+str(n)+'_'+i+';'+str(n_c)+';'+str(n_sum)+'\n')
                 
                 n +=1
+
+
+
+klona_remote_git('https://github.com/AIDEV23S/PyQt5-Exempel')
